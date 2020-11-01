@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "semantic-ui-css/semantic.min.css";
+import "react-toastify/dist/ReactToastify.min.css";
 import "./app/layout/styles.css";
+import "react-calendar/dist/Calendar.css";
 import App from "./app/layout/App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
@@ -10,6 +12,7 @@ import { configureStore } from "./app/store/configureStore";
 import ScrollToTop from "./app/layout/ScrollToTop";
 
 const store = configureStore();
+
 // console.log(store.getState())
 const rootEl = document.getElementById("root");
 
@@ -17,10 +20,9 @@ function render() {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-      <ScrollToTop/>
-      <App />
-    </BrowserRouter>
-
+        <ScrollToTop />
+        <App />
+      </BrowserRouter>
     </Provider>,
     rootEl
   );
